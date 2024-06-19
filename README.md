@@ -7,10 +7,12 @@ Entrega final hiberus University 2024,con duración de 3 meses. [Automatization 
     Frontend: Javascript, Junit, Mochawesome, Cypress. [pte.]
 
 -IDE´s empleados:
+
     Intellijidea Backend Java.
     MVSC Frontend Javascript.
 
 -Framework´s:
+
     N/A
 
 Manuel Tormos Blanes

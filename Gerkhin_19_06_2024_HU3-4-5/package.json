@@ -1,0 +1,17 @@
+{
+  "name": "pruebacypress",
+  "version": "1.0.0",
+  "description": "Curso cypress hiberus university 2024",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manuel Tormos Blanes",
+  "license": "ISC",
+  "devDependencies": {
+    "allure-commandline": "^2.29.0",
+    "allure-cypress": "^3.0.0-beta.3",
+    "cypress": "^13.11.0",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  }
+}

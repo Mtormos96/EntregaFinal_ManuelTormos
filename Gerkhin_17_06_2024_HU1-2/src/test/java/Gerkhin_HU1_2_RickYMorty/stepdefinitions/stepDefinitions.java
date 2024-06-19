@@ -132,4 +132,70 @@ public class stepDefinitions {
         responseTime = response.time();
         assert(responseTime < seconds * 1000);
     }
+
+    @And("the total amount in the cart is updated automatically")
+    public void theTotalAmountInTheCartIsUpdatedAutomatically() {
+
+    }
+
+    @And("the number of items in the cart is updated automatically")
+    public void theNumberOfItemsInTheCartIsUpdatedAutomatically() {
+
+    }
+
+    @Given("the user is on any product page")
+    public void theUserIsOnAnyProductPage() {
+    }
+
+    @When("the user clicks on the {string} button")
+    public void theUserClicksOnTheButton(String arg0) {
+    }
+
+    @Then("the product is added to the cart")
+    public void theProductIsAddedToTheCart() {
+    }
+
+    @And("a confirmation message is displayed indicating the product has been added to the cart")
+    public void aConfirmationMessageIsDisplayedIndicatingTheProductHasBeenAddedToTheCart() {
+    }
+
+    @Given("the user is on the cart page")
+    public void theUserIsOnTheCartPage() {
+    }
+
+    @Then("the user should see a list of products in the cart with their names, images, prices, quantities, and subtotal")
+    public void theUserShouldSeeAListOfProductsInTheCartWithTheirNamesImagesPricesQuantitiesAndSubtotal() {
+    }
+
+    @When("the user clicks on the {string} button next to a product")
+    public void theUserClicksOnTheButtonNextToAProduct(String arg0) {
+    }
+
+    @Then("the product is removed from the cart")
+    public void theProductIsRemovedFromTheCart() {
+    }
+
+    @When("the user changes the quantity of a product in the cart")
+    public void theUserChangesTheQuantityOfAProductInTheCart() {
+    }
+
+    @Then("the quantity of the product is updated in the cart")
+    public void theQuantityOfTheProductIsUpdatedInTheCart() {
+    }
+
+    @Given("the user has an iPhone and an Apple Cinema {int}\" monitor in the cart")
+    public void theUserHasAnIPhoneAndAnAppleCinemaMonitorInTheCart(int arg0) throws Throwable {
+}
+
+    @When("the user proceeds to checkout")
+    public void theUserProceedsToCheckout() {
+    }
+
+    @And("completes the purchase process")
+    public void completesThePurchaseProcess() {
+    }
+
+    @Then("a confirmation message is displayed indicating the products have been purchased successfully")
+    public void aConfirmationMessageIsDisplayedIndicatingTheProductsHaveBeenPurchasedSuccessfully() {
+    }
 }

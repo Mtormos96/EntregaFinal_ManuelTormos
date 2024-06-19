@@ -1,11 +1,20 @@
 package Gerkhin_HU1_2_RickYMorty.runners;
 
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
+
+//@RunWith(Cucumber.class)
+//@CucumberOptions(
+//        features = {"src/test/resources/features"},
+//        glue = {"com.vimalselvam.cucumber.stepdefinitions"},
+//)//
 
 public class CharacterApiTest {
 

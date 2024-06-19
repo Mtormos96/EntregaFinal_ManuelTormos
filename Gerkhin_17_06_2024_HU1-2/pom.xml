@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://www.maven.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
@@ -12,12 +12,12 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.0.0</version>
+            <version>6.10.4</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>7.0.0</version>
+            <version>6.10.4</version>
             <scope>test</scope>
         </dependency>
 
@@ -27,6 +27,13 @@
             <artifactId>rest-assured</artifactId>
             <version>4.4.0</version>
             <scope>test</scope>
+        </dependency>
+
+        <!--Dependencia cucumber extentsreport-->
+        <dependency>
+            <groupId>com.vimalselvam</groupId>
+            <artifactId>cucumber-extentsreport</artifactId>
+            <version>3.1.1</version>
         </dependency>
 
         <!-- JUnit dependencies -->

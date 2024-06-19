@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "88038b34-abc8-4047-ba7d-9d7d39ab4ecd",
+		"name": "Rick & Morty API test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35117982"
+	},
+	"item": [
+		{
+			"name": "HU1_2_RYM",
+			"item": [
+				{
+					"name": "Search full name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"First result includes Rick Sanchez\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.results[0].name).to.eql(\"Rick Sanchez\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "True",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rickandmortyapi.com/api/character/?name=Rick Sanchez",
+							"protocol": "https",
+							"host": [
+								"rickandmortyapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"character",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rick Sanchez"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Partial name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Results include Rick Sanchez\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var names = jsonData.results.map(function(result) { return result.name; });\r",
+									"    pm.expect(names).to.include(\"Rick Sanchez\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Result shows required fields\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.results[0]).to.have.property(\"name\");\r",
+									"    pm.expect(jsonData.results[0]).to.have.property(\"image\");\r",
+									"    pm.expect(jsonData.results[0]).to.have.property(\"status\");\r",
+									"    pm.expect(jsonData.results[0].location).to.have.property(\"name\");\r",
+									"    pm.expect(jsonData.results[0]).to.have.property(\"episode\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "True",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rickandmortyapi.com/api/character/?name=Rick",
+							"protocol": "https",
+							"host": [
+								"rickandmortyapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"character",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rick"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request for character details by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Character details are displayed\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(1);\r",
+									"    pm.expect(jsonData.name).to.eql(\"Rick Sanchez\");\r",
+									"    pm.expect(jsonData.status).to.not.be.null;\r",
+									"    pm.expect(jsonData.species).to.not.be.null;\r",
+									"    pm.expect(jsonData.gender).to.not.be.null;\r",
+									"    pm.expect(jsonData.origin.name).to.not.be.null;\r",
+									"    pm.expect(jsonData.location.name).to.not.be.null;\r",
+									"    pm.expect(jsonData.episode).to.not.be.empty;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rickandmortyapi.com/api/character/1",
+							"protocol": "https",
+							"host": [
+								"rickandmortyapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"character",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request for character with invalid ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Error message is displayed\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.error).to.eql(\"Character not found\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rickandmortyapi.com/api/character/9999",
+							"protocol": "https",
+							"host": [
+								"rickandmortyapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"character",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
